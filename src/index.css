@@ -6,6 +6,10 @@
     @apply my-14;
 }
 
+.info {
+    @apply text-center text-pry-clr-1 font-semibold text-6xl;
+}
+
 .cards {
     @apply flex flex-col w-screen items-center gap-9;
 }
