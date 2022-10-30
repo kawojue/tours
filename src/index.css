@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root {
+    @apply my-14;
+}
+
+.cards {
+    @apply flex flex-col w-screen items-center gap-9;
+}
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    @apply flex flex-col w-full max-w-[600px] rounded-md overflow-hidden bg-white;
+}
