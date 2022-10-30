@@ -35,8 +35,16 @@ function App() {
 
   if (isLoading) {
     return (
-      <h1 className="text-center text-pry-clr-1 font-semibold text-6xl">
+      <h1 className="info">
         Loading...
+      </h1>
+    )
+  }
+
+  if (fetchErr) {
+    return (
+      <h1 className="info">
+        {fetchErr}
       </h1>
     )
   }
