@@ -25,7 +25,7 @@ function App() {
     (async () => await fetchTours())()
     setTimeout(() => {
       setIsLoading(false)
-    }, 1000)
+    }, 1500)
   }, [])
 
   const notInterested = (id) => {
@@ -35,7 +35,7 @@ function App() {
 
   if (isLoading) {
     return (
-      <h1 className="info">
+      <h1>
         Loading...
       </h1>
     )
@@ -43,7 +43,7 @@ function App() {
 
   if (fetchErr) {
     return (
-      <h1 className="info">
+      <h1>
         {fetchErr}
       </h1>
     )
@@ -52,10 +52,10 @@ function App() {
   return (
     <main>
       <div className="flex flex-col gap-2 mb-10 items-center justify-center">
-        <h1 className="capitalize text-pry-clr-1 font-semibold text-5xl">
+        <h1>
           our tours
         </h1>
-        <div className="w-28 h-2 bg-pry-clr-2 rounded-md"></div>
+        <div className="w-32 h-1.5 bg-pry-clr-2 rounded-md"></div>
       </div>
       <Tours tours={tours} notInterested={notInterested} />
     </main>

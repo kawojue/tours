@@ -6,12 +6,17 @@
     @apply my-14;
 }
 
-.info {
-    @apply text-center text-pry-clr-1 font-semibold text-6xl;
+h1 {
+    @apply text-center text-pry-clr-1 font-semibold text-6xl capitalize;
+}
+
+h3,
+h4 {
+    @apply font-semibold;
 }
 
 .cards {
-    @apply flex flex-col w-screen items-center gap-9;
+    @apply flex flex-col items-center gap-9;
 }
 
 .card {
