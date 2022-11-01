@@ -11,21 +11,21 @@ function App() {
 
   const fetchTours = async () => {
     setIsLoading(true)
+    setFetchErr(null)
     try {
       const res = await fetch(url)
       const data = await res.json()
       setTours(data)
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 1200)
     } catch {
       setFetchErr("Please, reload the page.")
     }
-
   }
 
   useEffect(() => {
     (async () => await fetchTours())()
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
   }, [])
 
   const notInterested = (id) => {
@@ -57,7 +57,14 @@ function App() {
         </h1>
         <div className="w-32 h-1.5 bg-pry-clr-2 rounded-md"></div>
       </div>
-      <Tours tours={tours} notInterested={notInterested} />
+      {tours.length === 0 ?
+        <div className="w-full flex justify-center">
+          <button onClick={() => fetchTours()}
+            className="text-white tracking-wider text-xl bg-pry-clr-2 px-3 py-0.5 rounded-md">
+            Refresh
+          </button>
+        </div>
+        : <Tours tours={tours} notInterested={notInterested} />}
     </main>
   )
 }
