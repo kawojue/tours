@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import Context from '../Context/DataContext'
+import Context from '../context/DataContext'
 
 const Tours = () => {
     const { tours, notInterested } = useContext(Context)
