@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import Context from '../context/DataContext'
 
 const Tours = () => {
-    const { tours, notInterested } = useContext(Context)
+    const { tours, notInterested, readmore, setReadmore } = useContext(Context)
 
     return (
         <section className="cards">
@@ -19,7 +19,13 @@ const Tours = () => {
                                 ${tour.price}
                             </h4>
                         </div>
-                        <p>{tour.info}</p>
+                        <p>
+                            {`${readmore ? tour.info.slice(0, 189) + '...' : tour.info}`}
+                            <span onClick={() => setReadmore(!readmore)}
+                                className="text-sm text-pry-clr-2 cursor-pointer capitalize">
+                                {` ${readmore ? 'read more.' : 'show less.'}`}
+                            </span>
+                        </p>
                         <button onClick={() => notInterested(tour.id)}
                             className="px-5 capitalize py-1 border-2 border-pry-clr-5 text-pry-clr-5 w-fit rounded-md text-sm font-medium tracking-wider">
                             not interested
