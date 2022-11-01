@@ -1,4 +1,9 @@
-const Tours = ({ tours, notInterested }) => {
+import { useContext } from 'react'
+import Context from '../Context/DataContext'
+
+const Tours = () => {
+    const { tours, notInterested } = useContext(Context)
+
     return (
         <section className="cards">
             {tours.map(tour => (
