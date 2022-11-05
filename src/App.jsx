@@ -3,7 +3,8 @@ import Tours from './components/Tours'
 import Context from './context/DataContext'
 
 function App() {
-  const { tours, isLoading, fetchErr, fetchTours, notInterested } = useContext(Context)
+  const { tours, isLoading, fetchErr,
+    fetchTours } = useContext(Context)
 
   if (isLoading) {
     return (
@@ -36,7 +37,11 @@ function App() {
             Refresh
           </button>
         </div>
-        : <Tours tours={tours} notInterested={notInterested} />}
+        : <section className="cards">
+          {tours.map(tour => (
+            <Tours key={tour.id} {...tour} />
+          ))}
+        </section>}
     </main>
   )
 }
