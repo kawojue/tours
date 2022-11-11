@@ -2,7 +2,7 @@
 
 $ git clone https://github.com/alwaysappear/tours.git
 
-$ cd Mini-Notes-App
+$ cd tours
 
 $ npm install
 
